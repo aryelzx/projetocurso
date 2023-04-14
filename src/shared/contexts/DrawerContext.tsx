@@ -1,4 +1,4 @@
-import React, { useContext, createContext, useCallback, useState } from 'react';
+import React, { useContext, createContext, useCallback, useState, memo } from 'react';
 
 interface IDrawerData {
   isDrawerOpen: boolean;
@@ -21,7 +21,7 @@ interface DrawerProviderProps {
   children: React.ReactNode;
 }
 
-export const DrawerProvider: React.FC<DrawerProviderProps> = ({
+const DrawerProvider: React.FC<DrawerProviderProps> = ({
   children }) => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [drawerOptions, setDrawerOptions] = useState<IDrawerOption[]>([]);
@@ -39,3 +39,4 @@ export const DrawerProvider: React.FC<DrawerProviderProps> = ({
     </DrawerContext.Provider>
   );
 };
+export default memo(DrawerProvider);
