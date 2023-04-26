@@ -10,7 +10,9 @@ interface IListItemProps {
   onClick: (() => void) | undefined;
 }
 
-const ListItemLink: React.FC<IListItemProps> = ({ to, icon, label, onClick }) => {
+const ListItemLink = (props: IListItemProps) => {
+  const { to, icon, label, onClick } = props;
+
   const navigate = useNavigate();
 
   const reselvedPath = useResolvedPath(to);

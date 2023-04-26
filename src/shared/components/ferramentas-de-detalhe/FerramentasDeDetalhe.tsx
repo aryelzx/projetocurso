@@ -22,27 +22,30 @@ interface IFerramentasDeDetalheProps {
   aoClicarEmVoltar?: () => void;
 }
 
-export const FerramentasDeDetalhe: React.FC<IFerramentasDeDetalheProps> = ({
-  textoBotaoNovo = 'Novo',
+export const FerramentasDeDetalhe = (props: IFerramentasDeDetalheProps) => {
+  const
+    {
+      textoBotaoNovo = 'Novo',
 
-  mostrarBotaoNovo = true,
-  mostrarBotaoSalvar = true,
-  mostrarBotaoApagar = true,
-  mostrarBotaoVoltar = true,
-  mostrarBotaoSalvarEFechar = false,
+      mostrarBotaoNovo = true,
+      mostrarBotaoSalvar = true,
+      mostrarBotaoApagar = true,
+      mostrarBotaoVoltar = true,
+      mostrarBotaoSalvarEFechar = false,
 
-  mostrarBotaoNovoCarregando = false,
-  mostrarBotaoSalvarCarregando = false,
-  mostrarBotaoApagarCarregando = false,
-  mostrarBotaoVoltarCarregando = false,
-  mostrarBotaoSalvarEFecharCarregando = false,
+      mostrarBotaoNovoCarregando = false,
+      mostrarBotaoSalvarCarregando = false,
+      mostrarBotaoApagarCarregando = false,
+      mostrarBotaoVoltarCarregando = false,
+      mostrarBotaoSalvarEFecharCarregando = false,
 
-  aoClicarEmNovo,
-  aoClicarEmSalvar,
-  aoClicarEmApagar,
-  aoClicarEmVoltar,
-  aoClicarEmSalvarEFechar,
-}) => {
+      aoClicarEmNovo,
+      aoClicarEmSalvar,
+      aoClicarEmApagar,
+      aoClicarEmVoltar,
+      aoClicarEmSalvarEFechar
+    } = props
+
 
   const smDown = useMediaQuery((theme: Theme) => theme.breakpoints.down('sm'));
   const mdDown = useMediaQuery((theme: Theme) => theme.breakpoints.down('md'));

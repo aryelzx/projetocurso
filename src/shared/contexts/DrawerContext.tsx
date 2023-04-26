@@ -21,8 +21,8 @@ interface DrawerProviderProps {
   children: React.ReactNode;
 }
 
-const DrawerProvider: React.FC<DrawerProviderProps> = ({
-  children }) => {
+const DrawerProvider = (props: DrawerProviderProps) => {
+  const { children } = props;
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [drawerOptions, setDrawerOptions] = useState<IDrawerOption[]>([]);
 
