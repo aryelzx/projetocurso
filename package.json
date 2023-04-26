@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "mock": "npm run json-server -w -p 3333 .mockdatabase.json"
+    "mock": "npx json-server -w -p 3333 .mockdatabase.json"
   },
   "dependencies": {
     "@emotion/react": "^11.10.6",
