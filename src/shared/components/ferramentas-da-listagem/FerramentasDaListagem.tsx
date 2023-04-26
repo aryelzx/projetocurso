@@ -1,4 +1,4 @@
-import { Box, Button, Icon, InputAdornment, Paper, TextField, useTheme } from "@mui/material";
+import { Box, Button, Icon, InputAdornment, Paper, TextField, Theme, Typography, useTheme } from "@mui/material";
 
 import { Environment } from "../../environment";
 
@@ -12,13 +12,14 @@ interface IFerramentasDaListagemProps {
 }
 
 export const FerramentasDaListagem = (props: IFerramentasDaListagemProps) => {
-  const { textoDaBusca = '',
+  const {
+    textoDaBusca = '',
     mostrarInputBusca = false,
     aoMudarTextoDeBusca,
     textoBotaoNovo = 'Novo',
     mostrarBotaoNovo = true,
-    aoClicarEmNovo, } = props
-
+    aoClicarEmNovo,
+  } = props
 
   const theme = useTheme();
 
@@ -61,7 +62,9 @@ export const FerramentasDaListagem = (props: IFerramentasDaListagemProps) => {
           onClick={aoClicarEmNovo}
           endIcon={<Icon>add</Icon>}
         >
-          {textoBotaoNovo}
+          <Typography variant='button' noWrap>
+            {textoBotaoNovo}
+          </Typography>
         </Button>
       )}
     </Box>
