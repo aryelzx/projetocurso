@@ -11,14 +11,14 @@ interface IFerramentasDaListagemProps {
   aoClicarEmNovo?: () => void;
 }
 
-export const FerramentasDaListagem: React.FC<IFerramentasDaListagemProps> = ({
-  textoDaBusca = '',
-  mostrarInputBusca = false,
-  aoMudarTextoDeBusca,
-  textoBotaoNovo = 'Novo',
-  mostrarBotaoNovo = true,
-  aoClicarEmNovo,
-}) => {
+export const FerramentasDaListagem = (props: IFerramentasDaListagemProps) => {
+  const { textoDaBusca = '',
+    mostrarInputBusca = false,
+    aoMudarTextoDeBusca,
+    textoBotaoNovo = 'Novo',
+    mostrarBotaoNovo = true,
+    aoClicarEmNovo, } = props
+
 
   const theme = useTheme();
 
